@@ -1,6 +1,6 @@
 const yargs = require('yargs');
 const axios = require('axios');
-const appkey = '786049136b64fad29d8db45b8b536910'
+const appkey = ''
 
 const argv = yargs
     .options({
