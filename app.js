@@ -1,8 +1,24 @@
-const requst = require('request');
+const yargs = require('yargs');
 
-requst({
-    url: 'https://maps.googleapis.com/maps/api/geocode/json?address=14%20pedro%20street,london',
-    json: true
-}, (error, response, body) => {
-    console.log(body);
+const geocode = require('./geocode/geocode');
+
+const argv = yargs
+    .options({
+        a: {
+            demand: true,
+            alias: 'address',
+            decribe: 'Address to fetch weather for',
+            string: true
+        }
+    })
+    .help()
+    .alias('help', 'h')
+    .argv;
+
+geocode.geocodeAddress(argv.address, (errorMessage, results) => {
+  if (errorMessage) {
+    console.log(errorMessage);
+  } else {
+   console.log(JSON.stringify(results, undefined, 2));
+  }
 });
