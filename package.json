@@ -9,7 +9,7 @@
   "author": "Ergun Polat",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.15.2",
+    "axios": "^0.19.2",
     "request": "^2.79.0",
     "yargs": "^6.4.0"
   }
